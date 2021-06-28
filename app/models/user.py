@@ -1,7 +1,6 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-from sqlalchemy.orm import relationship
 
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
@@ -34,4 +33,4 @@ class User(db.Model, UserMixin):
       "watchlists": [watchlist.to_dict() for watchlist in self.watchlists]
     }
 
-  watchlists = relationship('Watchlist', back_populates='users', cascade="all, delete")
+  watchlists = db.relationship('Watchlist', back_populates='users', cascade="all, delete")

@@ -1,5 +1,4 @@
 from .db import db
-from sqlalchemy.orm import relationship
 
 
 class Watchlist_stock(db.Model):
@@ -18,4 +17,4 @@ class Watchlist_stock(db.Model):
         }
 
 
-    watchlist = relationship('Watchlist', back_populates='watchlist_stocks')
+    watchlist = db.relationship('Watchlist', back_populates='watchlist_stocks')

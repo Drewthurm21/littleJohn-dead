@@ -15,3 +15,5 @@ class Portfolio(db.Model):
             'user_id': self.user_id,
             'balance': self.balance
         }
+
+    owner = db.relationship('User', back_populates='portfolios')

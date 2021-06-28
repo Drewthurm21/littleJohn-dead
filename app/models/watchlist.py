@@ -1,5 +1,4 @@
 from .db import db
-from sqlalchemy.orm import relationship
 
 class Watchlist(db.Model):
     __tablename__ = 'watchlists'
@@ -17,5 +16,5 @@ class Watchlist(db.Model):
         }
 
 
-    user = relationship('User', back_populates='watchlists')
-    stocks = relationship('Watchlist_stock', back_populates='watchlists', cascade="all, delete")
+    user = db.relationship('User', back_populates='watchlists')
+    stocks = db.relationship('Watchlist_stock', back_populates='watchlists', cascade="all, delete")
