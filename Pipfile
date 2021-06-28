@@ -32,6 +32,7 @@ pycodestyle = "*"
 pylint = "*"
 rope = "*"
 psycopg2-binary = "*"
+flask-db = "*"
 
 [dev-packages]
 psycopg2-binary = "==2.8.6"
