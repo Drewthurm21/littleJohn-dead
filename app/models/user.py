@@ -34,4 +34,4 @@ class User(db.Model, UserMixin):
       "watchlists": [watchlist.to_dict() for watchlist in self.watchlists]
     }
 
-  watchlists = relationship('Watchlist', back_populates='users')
+  watchlists = relationship('Watchlist', back_populates='users', cascade="all, delete")
