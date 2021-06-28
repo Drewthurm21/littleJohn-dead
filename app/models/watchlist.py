@@ -9,3 +9,4 @@ class Watchlist(db.Model):
     user_id = db.Column(db.Integer, ForeignKey='users', nullable=False)
 
     user = relationship('User', back_populates='watchlists')
+    stocks = relationship('Watchlist_stock', back_populates='watchlists')
