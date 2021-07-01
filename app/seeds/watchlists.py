@@ -1,13 +1,13 @@
-from app.models import db, Portfolio
+from app.models import db, Watchlist
 
 def seed_watchlists():
 
-    watchlist = watchlist(
+    watchlist = Watchlist(
         name = "My 1st watchlist",
         user_id = 1
     )
 
-    watchlist2 = watchlist(
+    watchlist2 = Watchlist(
         name = "My 1st watchlist",
         user_id = 2
     )

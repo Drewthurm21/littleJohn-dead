@@ -8,7 +8,7 @@ class User(db.Model, UserMixin):
   id = db.Column(db.Integer, primary_key = True)
   username = db.Column(db.String(30), nullable = False, unique = True)
   email = db.Column(db.String(255), nullable = False, unique = True)
-  hashed_password = db.Column(db.String(90), nullable = False)
+  hashed_password = db.Column(db.String(255), nullable = False)
 
 
   @property
@@ -33,4 +33,5 @@ class User(db.Model, UserMixin):
       "watchlists": [watchlist.to_dict() for watchlist in self.watchlists]
     }
 
-  watchlists = db.relationship('Watchlist', back_populates='users', cascade="all, delete")
+  watchlists = db.relationship('Watchlist', back_populates='user', cascade="all, delete")
+  portfolios = db.relationship('Portfolio', back_populates='owner')

@@ -11,7 +11,7 @@ class Trade(db.Model):
     ticker = db.Column(db.String(10), nullable= False)
     total_price = db.Column(db.Numeric(asdecimal=False), nullable=False)
     total_units = db.Column(db.Numeric(asdecimal=False), nullable=False)
-    timestamp = db.Column(db.Datetime, nullable=False, default=datetime.datetime.now())
+    timestamp = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow())
 
 
     def to_dict(self):

@@ -17,4 +17,4 @@ class Watchlist_stock(db.Model):
         }
 
 
-    watchlist = db.relationship('Watchlist', back_populates='watchlist_stocks')
+    watchlist = db.relationship('Watchlist', back_populates='stocks')
