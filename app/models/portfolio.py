@@ -5,7 +5,7 @@ class Portfolio(db.Model):
     __tablename__ = 'portfolios'
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    portfolio_id = db.Column(db.Integer, db.ForeignKey('portfolios.id'), nullable=False)
     balance = db.Column(db.Numeric(asdecimal=False), nullable=False)
     
     
@@ -17,3 +17,4 @@ class Portfolio(db.Model):
         }
 
     owner = db.relationship('User', back_populates='portfolios')
+    trade = db.relationship('Portfolio', back_populates='portfolio')
