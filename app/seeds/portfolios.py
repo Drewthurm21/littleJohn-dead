@@ -4,7 +4,7 @@ from app.models import db, Portfolio
 def seed_portfolios():
 
     portfolio = Portfolio(
-        user_id = 1,
+        owner_id = 1,
         balance = 10000
     )
 
