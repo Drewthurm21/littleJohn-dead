@@ -4,71 +4,82 @@ import { useDispatch } from "react-redux";
 
 const TestForm = () => {
   const dispatch = useDispatch();
-  const [name, setName] = useState("")
-  const email
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [date, setDate] = useState('')
+  const [message, setMessage] = useState('')
 
 
+  const submitForm = () => {
+    const newRow = JSON.stringify({
+      name: name,
+      email: email,
+      date: date,
+      message: message
+    })
+
+
+    console.log(newRow)
+
+
+
+
+  }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error) => (
+    <form>
+      {/* <div>
+        {errors?.map((error) => (
           <div>{error}</div>
         ))}
-      </div>
+      </div> */}
       <div>
-        <label htmlFor="name">Name</label>
+        <label for="name">Name</label>
         <input
           name="name"
           type="text"
           placeholder="name"
           value={name}
-          onChange={updateName}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label for="email">Email</label>
         <input
           name="email"
           type="text"
           placeholder="Email"
           value={email}
-          onChange={updateEmail}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label for="date">Date</label>
         <input
-          name="email"
+          name="date"
           type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
+          placeholder="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label for="message">Message</label>
         <input
-          name="email"
+          name="message"
           type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
+          placeholder="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type="submit">Login</button>
-      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div onClick={submitForm}>Send</div>
+
     </form>
   );
 };
 
-export default LoginForm;
+export default TestForm;
