@@ -11,6 +11,11 @@ const TestForm = () => {
   const [message, setMessage] = useState('')
   const [price, setPrice] = useState(0)
 
+  const initials = ['DT', 'SS', 'MC']
+  const initialsOptions = initials.map(init => (
+    <option>{init}</option>
+  ))
+  const employees = ['Drew Thurman', 'Scott Schrader', 'Mike Christ']
 
   const submitForm = async () => {
     setPostId(postId + 1)
@@ -41,6 +46,12 @@ const TestForm = () => {
   return (
     <form>
       <div>
+        <label for="initials">Initials</label>
+        <select>
+          {initialsOptions}
+        </select>
+      </div>
+      <div>
         <label for="name">Name</label>
         <input
           name="name"
@@ -64,8 +75,7 @@ const TestForm = () => {
         <label for="date">Date</label>
         <input
           name="date"
-          type="text"
-          placeholder="date"
+          type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
