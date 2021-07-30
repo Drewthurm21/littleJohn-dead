@@ -4,19 +4,29 @@ import { useDispatch } from "react-redux";
 
 const TestForm = () => {
   const dispatch = useDispatch();
+  const [postId, setPostId] = useState(0)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [date, setDate] = useState('')
   const [message, setMessage] = useState('')
+  const [price, setPrice] = useState(0)
 
 
   const submitForm = async () => {
+    setPostId(postId + 1)
+
+    console.log(postId)
+
     const newRow = JSON.stringify({
+      id: postId + 1,
       name: name,
       email: email,
       date: date,
-      message: message
+      message: message,
+      price: price
     })
+
+    console.log(newRow)
 
     const res = await fetch('https://sheet.best/api/sheets/476ad59e-9cbe-47d9-93e4-44df9123c7a4',
       {
@@ -68,6 +78,16 @@ const TestForm = () => {
           placeholder="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+        />
+      </div>
+      <div>
+        <label for="price">Price</label>
+        <input
+          name="price"
+          type="text"
+          placeholder="price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
         />
       </div>
       <br></br>
