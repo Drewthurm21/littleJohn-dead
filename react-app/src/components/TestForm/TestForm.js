@@ -10,7 +10,7 @@ const TestForm = () => {
   const [message, setMessage] = useState('')
 
 
-  const submitForm = () => {
+  const submitForm = async () => {
     const newRow = JSON.stringify({
       name: name,
       email: email,
@@ -18,21 +18,18 @@ const TestForm = () => {
       message: message
     })
 
-
-    console.log(newRow)
-
-
-
-
+    const res = await fetch('https://sheet.best/api/sheets/476ad59e-9cbe-47d9-93e4-44df9123c7a4',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: newRow
+      })
   }
 
   return (
     <form>
-      {/* <div>
-        {errors?.map((error) => (
-          <div>{error}</div>
-        ))}
-      </div> */}
       <div>
         <label for="name">Name</label>
         <input
