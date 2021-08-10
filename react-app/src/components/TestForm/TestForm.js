@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-
 
 const TestForm = () => {
-  const dispatch = useDispatch();
   const [postId, setPostId] = useState(0)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
