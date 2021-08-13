@@ -97,6 +97,16 @@ const TestForm = () => {
           onChange={(e) => setPrice(e.target.value)}
         />
       </div>
+      <div>
+        <label for="service_center">Service Center</label>
+        <input
+          name="service_center"
+          type="text"
+          placeholder="Service center initials"
+          value={center}
+          onChange={(e) => setCenter(e.target.value)}
+        />
+      </div>
       <br></br>
       <br></br>
       <br></br>
