@@ -9,7 +9,6 @@ def seed_portfolios():
     )
 
     db.session.add(portfolio)
-
     db.session.commit()
 
 
