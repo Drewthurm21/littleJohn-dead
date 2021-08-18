@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { login } from "../../store/session";
-
+import './Forms.css'
 const LoginForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
@@ -18,9 +18,15 @@ const LoginForm = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
-    if (data.errors) {
-      setErrors(data.errors);
-    }
+    if (data.errors) setErrors(data.errors);
+
+  };
+
+  const demoLogin = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(login('demo@aa.io', 'password'));
+    if (data.errors) setErrors(data.errors);
+
   };
 
   const updateEmail = (e) => {
@@ -38,43 +44,46 @@ const LoginForm = () => {
   return (
     <div className='login-page-wrapper'>
       <div className='splash-side'>
-        <div className='splash-image-container'>
-          <img src={splashImg} alt='login_background'></img>
-        </div>
+        <div className='splash-image-container'></div>
       </div>
       <div className='form-side'>
         <div className='welcome-logo-container'>
-          <img src={welcomeLogo} alt='welcome_logo'></img>
+          <img src={welcomeLogo} alt='welcome-logo' className='welcome-logo'></img>
         </div>
         <div className='login-form-container'>
-          <form onSubmit={onLogin} className="login-form">
-            <div>
+          <form className="login-form">
+            <div className='form-errors'>
               {errors.map((error) => (
                 <div>{error}</div>
               ))}
             </div>
             <div>
-              <label htmlFor="email">Email</label>
               <input
+                required='true'
                 name="email"
                 type="text"
-                placeholder="Email"
                 value={email}
                 onChange={updateEmail}
               />
+              <label htmlFor="email">Email</label>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
               <input
+                required='true'
                 name="password"
                 type="password"
-                placeholder="Password"
                 value={password}
                 onChange={updatePassword}
               />
-              <button type="submit">Login</button>
+              <label htmlFor="password">Password</label>
+            </div>
+            <div className='login-buttons'>
+              <button type="submit" onSubmit={onLogin}>Login</button>
+              <button type="submit" onSubmit={demoLogin}>Demo Login</button>
             </div>
           </form>
+          <div>
+          </div>
         </div>
       </div>
     </div>

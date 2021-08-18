@@ -41,9 +41,7 @@ export const login = (email, password) => async (dispatch) => {
         })
     });
     const data = await response.json();
-    if (data.errors) {
-        return data;
-    }
+    if (data.errors) return data;
     dispatch(setUser(data));
     return {};
 }

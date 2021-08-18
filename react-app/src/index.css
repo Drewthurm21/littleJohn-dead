@@ -1,15 +1,1 @@
 /* TODO Add site wide styles */
-.login-page-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "splash form";
-}
-
-.splash-side {
-  grid-area: splash;
-}
-
-.form-side {
-  grid-area: form;
-}
