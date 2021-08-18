@@ -10,3 +10,8 @@ def get_watchlists():
     watchlists = Watchlist.query.all()
     watchlists_list = [watchlist.to_dict() for watchlist in watchlists]
     return {'watchlists': watchlists_list}
+
+
+@watchlist_routes.route('')
+def post_watchlists(data):
+    watchlist = Watchlist.create(data)

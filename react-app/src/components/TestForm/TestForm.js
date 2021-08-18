@@ -7,6 +7,7 @@ const TestForm = () => {
   const [date, setDate] = useState('')
   const [message, setMessage] = useState('')
   const [price, setPrice] = useState(0)
+  const [center, setCenter] = useState('')
 
   const initials = ['DT', 'SS', 'MC']
   const initialsOptions = initials.map(init => (
