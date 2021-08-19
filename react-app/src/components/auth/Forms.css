@@ -37,9 +37,9 @@
 
 .login-form {
   background-color: #f9f7f7;
-  width: 20vw;
+  width: 30vw;
   min-width: 350px;
-  height: 20vw;
+  height: 30vh;
   min-height: 400px;
   margin-bottom: 6vh;
   display: flex;
@@ -61,6 +61,7 @@
 }
 
 .login-form label {
+  pointer-events: none;
   position: absolute;
   transform: translate(8px, 5px);
   transition: 200ms ease-in-out;
@@ -78,6 +79,7 @@
 }
 
 .login-form input:focus + label {
+  pointer-events: none;
   transform: translate(8px, -20px);
 }
 
