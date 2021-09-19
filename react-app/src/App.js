@@ -5,8 +5,6 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import TestForm from './components/TestForm/TestForm'
-import User from "./components/User";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -27,7 +25,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Switch>
         <Route path="/login" exact={true}>
           <LoginForm />
@@ -35,9 +32,9 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <Route path="/" exact={true}>
-          <TestForm />
-        </Route>
+        <ProtectedRoute path="/" exact={true}>
+          <NavBar />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
