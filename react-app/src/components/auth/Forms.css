@@ -10,29 +10,23 @@
   overflow: hidden;
 }
 
-.splash-side {
-  grid-area: splash;
-}
-
 .splash-image-container {
+  grid-area: splash;
   height: 100vh;
   width: 50vw;
+  background-image: url(../../images/splashPageImg.jpg);
+  background-size: cover;
+  opacity: 0.7;
 }
 
 .form-side {
   grid-area: form;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   width: 50vw;
   z-index: 1;
-}
-
-.splash-image-container {
-  background-image: url(../../images/splashPageImg.jpg);
-  background-size: cover;
-  opacity: 0.7;
 }
 
 .login-form {
@@ -103,6 +97,7 @@
   border: 1px solid #030303;
   color: white;
 }
+
 .welcome-logo {
   width: 25vw;
 }

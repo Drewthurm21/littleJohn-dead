@@ -40,9 +40,7 @@ const LoginForm = () => {
 
   return (
     <div className='login-page-wrapper'>
-      <div className='splash-side'>
-        <div className='splash-image-container'></div>
-      </div>
+      <div className='splash-image-container'></div>
       <div className='form-side'>
         <div className='welcome-logo-container'>
           <img src={welcomeLogo} alt='welcome-logo' className='welcome-logo'></img>
