@@ -32,9 +32,11 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/" exact={true}>
-          <NavBar />
-        </ProtectedRoute>
+        <Route path="/" exact={true}>
+          <div className="homepage-wrapper">
+            <NavBar />
+          </div>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

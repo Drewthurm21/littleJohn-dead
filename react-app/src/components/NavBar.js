@@ -5,26 +5,17 @@ import LogoutButton from './auth/LogoutButton';
 const NavBar = () => {
   return (
     <nav>
-      <ul>
-        <li>
-          <NavLink to="/" exact={true} activeClassName="active">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/login" exact={true} activeClassName="active">
-            Login
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/sign-up" exact={true} activeClassName="active">
-            Sign Up
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton />
-        </li>
-      </ul>
+      <div>banner</div>
+      <NavLink to="/" exact={true} activeClassName="active">
+        Home
+      </NavLink>
+      <NavLink to="/login" exact={true} activeClassName="active">
+        Login
+      </NavLink>
+      <NavLink to="/sign-up" exact={true} activeClassName="active">
+        Sign Up
+      </NavLink>
+      <LogoutButton />
     </nav>
   );
 }
